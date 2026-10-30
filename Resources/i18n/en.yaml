@@ -1,0 +1,17 @@
+# IMBlocker English UI strings.
+# Values may contain {0}-style string.Format placeholders.
+
+_lang:
+  code: en
+  name: English
+  systemLanguages:
+    - English
+
+settings:
+  enabled: "Enable IMBlocker"
+  enabled.Description: "Turn the mod on or off without restarting the game."
+  blockIme: "Block IME outside text fields"
+  blockIme.Description: "Disable the Windows IME while playing so keystrokes reach the game. The IME is restored automatically when you click a text field."
+  language: "Language"
+  languageAuto: "Auto (follow game)"
+  hint: "IMBlocker keeps Chinese/Japanese/Korean IME shortcuts from leaking into gameplay, and restores the IME while editing text."

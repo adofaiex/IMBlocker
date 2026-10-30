@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="core/IMBlocker.Core.csproj" />
+  <Project Path="loaders/bepinex/IMBlocker.Loader.BepInEx.csproj" />
+  <Project Path="loaders/melon/IMBlocker.Loader.Melon.csproj" />
+  <Project Path="loaders/umm/IMBlocker.Loader.UMM.csproj" />
+</Solution>

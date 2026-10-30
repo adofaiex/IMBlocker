@@ -1,0 +1,13 @@
+{
+  "Id": "IMBlocker",
+  "DisplayName": "IMBlocker",
+  "Author": "adofaiex",
+  "Description": "IME blocker for ADOFAI.",
+  "Version": "0.1.7",
+  "ManagerVersion": "0.27.0",
+  "Requirements": [],
+  "AssemblyName": "IMBlocker.Loader.UMM.dll",
+  "EntryMethod": "IMBlocker.Loaders.UmmEntry.Load",
+  "HomePage": "",
+  "Repository": "https://raw.githubusercontent.com/adofaiex/mod-update/refs/heads/main/IMBlocker/Repository.json"
+}

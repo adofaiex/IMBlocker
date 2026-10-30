@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IMBlocker.Loaders</RootNamespace>
+    <AssemblyName>IMBlocker.Loader.BepInEx</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ModManagerDir>$(ProjectDir)../../lib/ModManager/</ModManagerDir>
+    <OutputPath>..\..\bin\$(Configuration)\loaders\bepinex\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- Uses the GameExePath_BEPINEXFinal path resolved from .env (see Directory.Build.props).
+         You can still override GameExePath here to hard-code a path. -->
+    <GameExePath>$(GameExePath_BEPINEXFinal)</GameExePath>
+    <ManagedAssembliesDir Condition="'$(GameExePath)' != ''">$([System.IO.Path]::GetDirectoryName($(GameExePath)))\$([System.IO.Path]::GetFileNameWithoutExtension($(GameExePath)))_Data\Managed</ManagedAssembliesDir>
+  </PropertyGroup>
+
+  <Import Project="..\..\ADOFAIMod.targets" Condition="Exists('..\..\ADOFAIMod.targets')" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\core\IMBlocker.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>$(ModManagerDir)BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(ManagedAssembliesDir)\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(ModManagerDir)0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(ManagedAssembliesDir)\Assembly-CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

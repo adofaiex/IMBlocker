@@ -1,0 +1,18 @@
+# IMBlocker 简体中文界面文案。
+# 值中可使用 {0} 形式的 string.Format 占位符。
+
+_lang:
+  code: zh
+  name: 中文
+  systemLanguages:
+    - ChineseSimplified
+    - ChineseTraditional
+
+settings:
+  enabled: "启用 IMBlocker"
+  enabled.Description: "无需重启游戏即可开启或关闭本模组。"
+  blockIme: "在非输入框时屏蔽输入法"
+  blockIme.Description: "游玩时禁用 Windows 输入法，让按键直接进入游戏；点击输入框后会自动恢复输入法。"
+  language: "语言"
+  languageAuto: "自动（跟随游戏）"
+  hint: "IMBlocker 可避免中文/日文/韩文输入法的快捷键影响游戏，并在编辑文本时自动恢复输入法。"

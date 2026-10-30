@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IMBlocker</RootNamespace>
+    <AssemblyName>IMBlocker.Core</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <OutputPath>..\bin\$(Configuration)\core\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <IsCoreProject>true</IsCoreProject>
+    <!-- Core uses the default game path from .env (see Directory.Build.props). -->
+    <GameExePath>$(GameExePath_Default)</GameExePath>
+    <ManagedAssembliesDir Condition="'$(GameExePath)' != ''">$([System.IO.Path]::GetDirectoryName($(GameExePath)))\$([System.IO.Path]::GetFileNameWithoutExtension($(GameExePath)))_Data\Managed</ManagedAssembliesDir>
+  </PropertyGroup>
+
+  <Import Project="..\ADOFAIMod.targets" Condition="Exists('..\ADOFAIMod.targets')" />
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\lib\ModManager\0Harmony.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>$(ManagedAssembliesDir)\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(ManagedAssembliesDir)\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(ManagedAssembliesDir)\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkyHook.Unity">
+      <HintPath>$(ManagedAssembliesDir)\SkyHook.Unity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
